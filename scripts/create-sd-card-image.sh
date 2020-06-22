@@ -31,6 +31,11 @@ sudo cp /home/vagrant/linux-socfpga/arch/arm/boot/dts/socfpga_cyclone5_socdk.dtb
 wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20200618.rar -O release.rar
 sudo cp release.rar /mnt/data
 
+# Support MiSTer Scripts.
+sudo mkdir -p /mnt/data/Scripts
+wget -c https://raw.githubusercontent.com/MiSTer-devel/Scripts_MiSTer/master/other_authors/wifi.sh
+sudo cp wifi.sh /mnt/data/Scripts
+
 # Clean up.
 sudo umount /mnt/data
 sudo losetup -d /dev/loop0

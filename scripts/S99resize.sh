@@ -11,6 +11,7 @@ mkdir -p /mnt/release /tmp/release
 mount -r /dev/mmcblk0p2 /mnt/release
 cd /tmp/release
 unrar x /mnt/release/release.rar
+cp /mnt/release/Scripts/* /tmp/release/files/Scripts
 umount /mnt/release
 
 # Re-partition the SD card:
