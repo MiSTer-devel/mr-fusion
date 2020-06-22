@@ -69,7 +69,7 @@ open an issue](https://github.com/michaelshmitty/mr-fusion/issues).
 
 ## Acknowledgements
 
-Thanks to Sorgelig, Rysha, Ziggurat, alanswx and Locutus73 for their insights.
+Thanks to Sorgelig, Rysha, Ziggurat, alanswx, r0ni and Locutus73 for their insights.
 Thanks to [amoore2600](https://www.youtube.com/channel/UC_IynEJIMqkYaCVjEk_EIlg) for pushing me to build this.
 
 ## Disclaimer
