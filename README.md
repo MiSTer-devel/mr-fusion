@@ -20,7 +20,7 @@ will follow soon.
 
 ### Step 1
 
-Download a copy of the image from the [releases](https://github.com/michaelshmitty/mr-fusion/blob/master/releases) page.
+Download a copy of the image from the [releases](https://github.com/michaelshmitty/mr-fusion/releases) page.
 
 ### Step 2
 
@@ -75,4 +75,4 @@ Thanks to amoore2600 for pushing me to build this.
 ## Disclaimer
 
 This program is free software. It comes without any warranty, to
-the extent permitted by applicable law. See LICENSE for more details.
+the extent permitted by applicable law. See [LICENSE](https://github.com/michaelshmitty/mr-fusion/blob/master/LICENSE) for more details.
