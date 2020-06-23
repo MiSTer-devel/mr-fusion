@@ -114,4 +114,18 @@ Vagrant.configure("2") do |config|
     fi
 
   SHELL
+
+  # Copy Kconfig configuration files
+  ## buildroot configuration
+  config.vm.provision "file", source: "../config/buildroot-defconfig",
+                              destination: "/home/vagrant/buildroot/configs/mrfusion_defconfig"
+
+  ## u-boot configuration
+  config.vm.provision "file", source: "../config/u-boot-defconfig",
+                              destination: "/home/vagrant/u-boot/configs/mrfusion_defconfig"
+
+  ## kernel configuration
+  config.vm.provision "file", source: "../config/kernel-defconfig",
+                              destination: "/home/vagrant/linux-socfpga/arch/arm/configs/mrfusion_defconfig"
+
 end
