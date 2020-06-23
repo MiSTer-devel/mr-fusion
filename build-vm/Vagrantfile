@@ -114,5 +114,4 @@ Vagrant.configure("2") do |config|
     fi
 
   SHELL
-  config.vm.synced_folder "shared/", "/shared"
 end

@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Create the sd card image container.
-dd if=/dev/zero of=/shared/mr-fusion.img bs=12M count=10
+dd if=/dev/zero of=/vagrant/images/mr-fusion.img bs=12M count=10
 
 # Partition the sd card image.
-sfdisk --force /shared/mr-fusion.img << EOF
+sfdisk --force /vagrant/images/mr-fusion.img << EOF
 ; 8192; a2
 ; ; 0B
 EOF
 
 # Attach the sd card image to a loopback device.
-sudo losetup -fP /shared/mr-fusion.img
+sudo losetup -fP /vagrant/images/mr-fusion.img
 
 # Install the bootloader.
 sudo dd if="/home/vagrant/u-boot/u-boot-with-spl.sfp" of="/dev/loop0p1" bs=64k
