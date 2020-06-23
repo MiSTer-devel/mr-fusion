@@ -1,13 +1,11 @@
-# Mr. Fusion - Universal MiSTer SD card image
+# Mr. Fusion - Universal MiSTer installation image
 
-This project provides a minimal SD card image that you can download
+This project provides a small, minimal image that you can download
 and flash onto an SD card of any size with a tool like [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/applepi-baker-v2/), [balenaEtcher](https://www.balena.io/etcher/), [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) or even [dd](https://en.wikipedia.org/wiki/Dd_%28Unix%29).
 
-## Status
-
-The project is currently in beta testing. More documentation as well as
-a complete account of the reasoning behind it and its development process
-will follow soon.
+When you put this SD card into your DE10-nano and start it up, it will
+expand the SD card to its full capacity and install a basic MiSTer setup.
+This will be familiar to anyone who's worked with a Raspberry Pi before.
 
 ## Requirements
 
@@ -20,7 +18,7 @@ will follow soon.
 
 ### Step 1
 
-Download a copy of the image from the [releases](https://github.com/michaelshmitty/mr-fusion/releases) page.
+Download a copy of the image from the [releases](https://github.com/MiSTer-devel/mr-fusion/releases) page.
 
 ### Step 2
 
@@ -57,6 +55,46 @@ DE10-nano and getting to the MiSTer menu should not take more than 90 seconds.
 If you don't see the MiSTer menu appear after two minutes, power off the
 DE10-nano, remove the SD card and start over._
 
+## MiSTer scripts support
+
+The [MiSTer update script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
+is included by default in every MiSTer installation.
+This image also includes the [WiFi setup script](https://github.com/MiSTer-devel/Scripts_MiSTer/blob/master/other_authors/wifi.sh) to allow you to
+quickly setup a wireless internet connection after installation.
+
+### Adding more scripts
+
+You can add more scripts if necessary: After you have flashed your SD card and
+before you move it over to the DE10-nano, re-insert it into your computer.
+A new drive called `MRFUSION` will appear. In it is a `Scripts` folder. Put
+any script you want to have available in your MiSTer in this folder. It will
+be copied to your MiSTer's Scripts folder automatically during the installation.
+
+## How is this an improvement to the MiSTer setup process?
+
+Having a universal flash image means we can just use _any_ SD card image
+flashing tool on _any_ platform instead of a bespoke MiSTer SD card creation
+app. We no longer need to maintain such a custom made app or port it to other
+platforms.
+
+A fixed size image based approach has one caveat: We want the image to be as
+small as possible to reduce the time it takes to download and to support a wide
+variety of SD card capacities. We've managed to cram everything MiSTer needs
+into approximately 100 MB.
+When you flash a 100 MB image onto any size SD card, you will get
+only 100 MB of storage, most of which will be taken up by the MiSTer files.
+Your whopping 256 GB capacity SD card will only have a few megabytes free space.
+The filesystem must be resized to match its full capacity.
+
+MiSTer uses the exFAT filesystem for maximum compatibility across different
+platforms (Windows, macOS, Linux, ...). Linux, the operating system that MiSTer
+uses under the hood does not (yet) support resizing exFAT filesystems.
+The only way to ensure maximum SD card capacity is to recreate the filesystem
+with the proper size. However, we can't know in advance what that capacity
+is going to be so we let the DE10-nano do the resize before installing
+MiSTer. That's what Mr. Fusion does. Because everyone has different computers
+but we all have the same DE10-nano board, it makes sense to do it this way.
+
 ## Getting help
 
 If you need help, come find us in the #mister-help channel on the [Classic
@@ -65,7 +103,7 @@ Gaming Discord server](https://top.gg/servers/418895913210216448).
 ## Reporting issues
 
 If you think you found a bug or you have an idea for an improvement, [please
-open an issue](https://github.com/michaelshmitty/mr-fusion/issues).
+open an issue](https://github.com/MiSTer-devel/mr-fusion/issues).
 
 ## Acknowledgements
 
@@ -75,4 +113,4 @@ Thanks to [amoore2600](https://www.youtube.com/channel/UC_IynEJIMqkYaCVjEk_EIlg)
 ## Disclaimer
 
 This program is free software. It comes without any warranty, to
-the extent permitted by applicable law. See [LICENSE](https://github.com/michaelshmitty/mr-fusion/blob/master/LICENSE) for more details.
+the extent permitted by applicable law. See [LICENSE](https://github.com/MiSTer-devel/mr-fusion/blob/master/LICENSE) for more details.
