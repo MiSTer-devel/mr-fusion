@@ -1,6 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+VM_MEMORY=8192
+VM_CORES=8
+VM_DISK_SIZE=50
+U_BOOT_VERSION="2020.04"
+BUILDROOT_VERSION="2020.02.3"
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -13,7 +19,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/bionic64"
-  config.disksize.size = '50GB'
+  config.disksize.size = "#{VM_DISK_SIZE}GB"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -59,8 +65,8 @@ Vagrant.configure("2") do |config|
   # end
 
   config.vm.provider :virtualbox do |v, override|
-    v.memory = 8192
-    v.cpus = 8
+    v.memory = VM_MEMORY
+    v.cpus = VM_CORES
 
     required_plugins = %w( vagrant-vbguest )
     required_plugins.each do |plugin|
@@ -83,6 +89,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  # Update, upgrade and install required system packages
   config.vm.provision "shell", inline: <<-SHELL
     apt-get -y update
     apt-get -y upgrade
@@ -95,10 +102,14 @@ Vagrant.configure("2") do |config|
     apt-get -q -y clean
   SHELL
 
+  # Download U-boot source, Linux kernel source and Buildroot
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     if [ ! -d /home/vagrant/u-boot ]
       then
-        git clone https://github.com/u-boot/u-boot.git
+        wget --quiet -c https://ftp.denx.de/pub/u-boot/u-boot-#{U_BOOT_VERSION}.tar.bz2
+        tar xf u-boot-#{U_BOOT_VERSION}.tar.bz2
+        mv u-boot-#{U_BOOT_VERSION} u-boot
+        rm u-boot-#{U_BOOT_VERSION}.tar.bz2
     fi
 
     if [ ! -d /home/vagrant/linux-socfpga ]
@@ -106,13 +117,13 @@ Vagrant.configure("2") do |config|
         git clone https://github.com/altera-opensource/linux-socfpga.git
     fi
 
-    if [ ! -d /home/vagrant/buildroot-2020.02.3 ]
+    if [ ! -d /home/vagrant/buildroot ]
       then
-        wget https://buildroot.org/downloads/buildroot-2020.02.3.tar.gz
-        tar xvf buildroot-2020.02.3.tar.gz
-        rm buildroot-2020.02.3.tar.gz
+        wget --quiet -c https://buildroot.org/downloads/buildroot-#{BUILDROOT_VERSION}.tar.gz
+        tar xf buildroot-#{BUILDROOT_VERSION}.tar.gz
+        mv buildroot-#{BUILDROOT_VERSION} buildroot
+        rm buildroot-#{BUILDROOT_VERSION}.tar.gz
     fi
-
   SHELL
 
   # Copy Kconfig configuration files
