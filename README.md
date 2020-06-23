@@ -105,6 +105,11 @@ Gaming Discord server](https://top.gg/servers/418895913210216448).
 If you think you found a bug or you have an idea for an improvement, [please
 open an issue](https://github.com/MiSTer-devel/mr-fusion/issues).
 
+## Building it yourself
+
+See [BUILDING.md](https://github.com/MiSTer-devel/mr-fusion/blob/master/BUILDING.md)
+for more details.
+
 ## Acknowledgements
 
 Thanks to Sorgelig, Rysha, Ziggurat, alanswx, r0ni and Locutus73 for their insights.
