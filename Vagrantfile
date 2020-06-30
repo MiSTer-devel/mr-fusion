@@ -4,7 +4,6 @@
 VM_MEMORY=8192
 VM_CORES=8
 VM_DISK_SIZE=50
-U_BOOT_VERSION="2020.04"
 BUILDROOT_VERSION="2020.02.3"
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
@@ -96,22 +95,14 @@ Vagrant.configure("2") do |config|
     apt-get -y install build-essential git libncurses-dev flex bison openssl \
       libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf \
       liblz4-tool bc curl gcc git libssl-dev libncurses5-dev lzop make \
-      u-boot-tools unzip exfat-utils
+      unzip exfat-utils
     apt-get -y build-dep linux
     apt-get -q -y autoremove
     apt-get -q -y clean
   SHELL
 
-  # Download U-boot source, Linux kernel source and Buildroot
+  # Download Linux kernel source and Buildroot
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-    if [ ! -d /home/vagrant/u-boot ]
-      then
-        wget --quiet -c https://ftp.denx.de/pub/u-boot/u-boot-#{U_BOOT_VERSION}.tar.bz2
-        tar xf u-boot-#{U_BOOT_VERSION}.tar.bz2
-        mv u-boot-#{U_BOOT_VERSION} u-boot
-        rm u-boot-#{U_BOOT_VERSION}.tar.bz2
-    fi
-
     if [ ! -d /home/vagrant/linux-socfpga ]
       then
         git clone https://github.com/altera-opensource/linux-socfpga.git
@@ -128,30 +119,14 @@ Vagrant.configure("2") do |config|
 
   # Copy Kconfig configuration files
   ## buildroot configuration
-  config.vm.provision "file", source: "../config/buildroot-defconfig",
+  config.vm.provision "file", source: "config/buildroot-defconfig",
                               destination: "/home/vagrant/buildroot/configs/mrfusion_defconfig"
 
-  ## u-boot configuration
-  config.vm.provision "file", source: "../config/u-boot-defconfig",
-                              destination: "/home/vagrant/u-boot/configs/mrfusion_defconfig"
-
   ## kernel configuration
-  config.vm.provision "file", source: "../config/kernel-defconfig",
+  config.vm.provision "file", source: "config/kernel-defconfig",
                               destination: "/home/vagrant/linux-socfpga/arch/arm/configs/mrfusion_defconfig"
 
   # Copy resize init script
-  config.vm.provision "file", source: "../scripts/S99install-mister.sh",
+  config.vm.provision "file", source: "scripts/S99install-mister.sh",
                               destination: "/home/vagrant/buildroot/board/mrfusion/rootfs-overlay/etc/init.d/"
-
-  # Copy build script
-  config.vm.provision "file", source: "../scripts/build.sh",
-                              destination: "/home/vagrant/"
-
-  # Copy clean script
-  config.vm.provision "file", source: "../scripts/clean.sh",
-                              destination: "/home/vagrant/"
-
-  # Copy create-sd-card-image script
-  config.vm.provision "file", source: "../scripts/create-sd-card-image.sh",
-                              destination: "/home/vagrant/"
 end
