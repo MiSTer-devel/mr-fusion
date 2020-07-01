@@ -4,7 +4,7 @@ Mr. Fusion provides a compact image that you can download
 and flash onto an SD card of any size with a tool like [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/applepi-baker-v2/), [balenaEtcher](https://www.balena.io/etcher/), [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) or even [dd](https://en.wikipedia.org/wiki/Dd_%28Unix%29).
 
 When you put this SD card into your DE10-nano and start it up, it will
-expand the SD card to its full capacity and install a basic MiSTer setup.
+expand the card to its full capacity and install a basic MiSTer setup.
 This will be familiar to anyone who's worked with a Raspberry Pi before.
 
 From there, using the built-in scripts, you can configure WiFi
