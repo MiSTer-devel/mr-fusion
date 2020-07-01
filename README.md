@@ -1,6 +1,6 @@
 # Mr. Fusion - Universal MiSTer installation image
 
-M. Fusion provides a compact image that you can download
+Mr. Fusion provides a compact image that you can download
 and flash onto an SD card of any size with a tool like [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/applepi-baker-v2/), [balenaEtcher](https://www.balena.io/etcher/), [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) or even [dd](https://en.wikipedia.org/wiki/Dd_%28Unix%29).
 
 When you put this SD card into your DE10-nano and start it up, it will
@@ -49,7 +49,9 @@ does not support flashing zip files!_
 Put the SD card into the DE10-nano and power it on. After a few seconds the
 orange LED on the board should light up. If you have a TV or monitor connected
 to the HDMI port, the screen will turn blue and then show an installation
-notice splash screen.
+notice splash screen:
+
+<img src="https://github.com/MiSTer-devel/mr-fusion/raw/master/vendor/support/splash.png" alt="MiSTer installation splash screen" width="50%">
 
 Mr. Fusion will automatically re-partition and resize your SD card and copy all the
 necessary MiSTer files onto it. When it's done it will reboot your DE10-nano
