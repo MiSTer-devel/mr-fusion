@@ -1,11 +1,16 @@
 # Mr. Fusion - Universal MiSTer installation image
 
-This project provides a small, minimal image that you can download
+M. Fusion provides a compact image that you can download
 and flash onto an SD card of any size with a tool like [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/applepi-baker-v2/), [balenaEtcher](https://www.balena.io/etcher/), [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) or even [dd](https://en.wikipedia.org/wiki/Dd_%28Unix%29).
 
 When you put this SD card into your DE10-nano and start it up, it will
 expand the SD card to its full capacity and install a basic MiSTer setup.
 This will be familiar to anyone who's worked with a Raspberry Pi before.
+
+From there, using the built-in scripts, you can configure WiFi
+(or use ethernet out of the box) and run the standard
+[MiSTer Updater script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
+to get an up to date MiSTer installation.
 
 ## Requirements
 
@@ -18,7 +23,7 @@ This will be familiar to anyone who's worked with a Raspberry Pi before.
 
 ### Step 1
 
-Download a copy of the image from the [releases](https://github.com/MiSTer-devel/mr-fusion/releases) page.
+Download the latest version from the [releases](https://github.com/MiSTer-devel/mr-fusion/releases) page.
 
 ### Step 2
 
@@ -41,23 +46,28 @@ does not support flashing zip files!_
 
 ### Step 4
 
-Put the SD card into the DE10-nano and power it on. The board will boot up,
-re-partition and resize your SD card and copy all the necessary MiSTer files
-onto it. When it's done it will automatically reboot and you will be greeted
-by the MiSTer menu, provided that you have connected your board to a TV or
-monitor.
-Continue to set up your MiSTer device as usual following the
-instructions on the [MiSTer wiki](https://github.com/MiSTer-devel/Main_MiSTer/wiki).
+Put the SD card into the DE10-nano and power it on. After a few seconds the
+orange LED on the board should light up. If you have a TV or monitor connected
+to the HDMI port, the screen will turn blue and then show an installation
+notice splash screen.
 
-_Note: There is currently no visual feedback on the installation process on the
-DE10-nano board. This will be added soon. From powering on the
-DE10-nano and getting to the MiSTer menu should not take more than 90 seconds.
-If you don't see the MiSTer menu appear after two minutes, power off the
-DE10-nano, remove the SD card and start over._
+Mr. Fusion will automatically re-partition and resize your SD card and copy all the
+necessary MiSTer files onto it. When it's done it will reboot your DE10-nano
+and you will be greeted by the MiSTer menu.
+
+Connect a keyboard to your DE10-nano and hit F12 to open the menu. Through
+the Scripts section you can configure WiFi and update your MiSTer.
+Please refer to the instructions on the
+[MiSTer wiki](https://github.com/MiSTer-devel/Main_MiSTer/wiki) for more
+information.
+
+_Note: From powering on the DE10-nano and getting to the MiSTer menu should not
+take more than 90 seconds. If you don't see the MiSTer menu appear after
+two minutes, power off the DE10-nano, remove the SD card and start over._
 
 ## MiSTer scripts support
 
-The [MiSTer update script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
+The [MiSTer updater script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
 is included by default in every MiSTer installation.
 This image also includes the [WiFi setup script](https://github.com/MiSTer-devel/Scripts_MiSTer/blob/master/other_authors/wifi.sh) to allow you to
 quickly setup a wireless internet connection after installation.
