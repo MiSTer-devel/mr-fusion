@@ -1,3 +1,7 @@
+# Version 2.1
+
+- Updated packaged MiSTer release to release_20200908.
+
 # Version 2.0
 
 - Added HDMI out support.
