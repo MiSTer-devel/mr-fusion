@@ -141,7 +141,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "config/kernel-defconfig",
                               destination: "/home/vagrant/linux-socfpga/arch/arm/configs/mrfusion_defconfig"
 
-  # Copy resize init script
+  # Copy MiSTer installation init script
   config.vm.provision "file", source: "scripts/S99install-mister.sh",
                               destination: "/home/vagrant/buildroot/board/mrfusion/rootfs-overlay/etc/init.d/"
 end
