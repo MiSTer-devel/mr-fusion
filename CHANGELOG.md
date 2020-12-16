@@ -1,3 +1,10 @@
+# Version 2.2
+
+- Added support for custom WiFi and Samba configuration (thanks versechoruscurse
+  for the suggestion).
+- Improved splash screen visibility when using HDMI to VGA adapter dongles with
+  older (CRT) monitors.
+
 # Version 2.1
 
 - Updated packaged MiSTer release to release_20200908.
