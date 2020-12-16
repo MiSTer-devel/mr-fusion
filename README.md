@@ -88,7 +88,7 @@ A new drive called `MRFUSION` will appear. In it is a `Scripts` folder. Put
 any script you want to have available in your MiSTer in this folder. It will
 be copied to your MiSTer's Scripts folder automatically during the installation.
 
-### Custom WiFi configuration
+## Custom WiFi configuration (optional)
 
 You can copy a custom `wpa_supplicant.conf` file in the root of the SD card
 after flashing the Mr. Fusion image. It will automatically be copied to the
@@ -96,7 +96,7 @@ correct place during the installation of MiSTer.
 This allows you to configure your WiFi credentials before you install MiSTer
 and thus removes the need to connect a keyboard after installation.
 
-### Custom Samba configuration
+## Custom Samba configuration (optional)
 
 You can copy a custom `samba.sh` file in the root of the SD card
 after flashing the Mr. Fusion image. It will automatically be copied to the
