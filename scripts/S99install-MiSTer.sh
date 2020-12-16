@@ -1,4 +1,19 @@
 #!/bin/sh
+# Copyright 2020 Michael Smith <root@retrospace.be>
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as published
+# by the Free Software Foundation.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+# MA 02110-1301, USA.
 
 # This script is used as an init script and should only
 # run on startup, not on shutdown.
@@ -10,10 +25,18 @@ fi
 mkdir -p /mnt/release /tmp/release
 mount -r /dev/mmcblk0p1 /mnt/release
 ## Show splash screen
-fbv /mnt/release/splash.png &
+fbv -fr /mnt/release/splash.png &
 cd /tmp/release
 unrar x /mnt/release/release.rar
 cp /mnt/release/Scripts/* /tmp/release/files/Scripts
+## Custom wpa_supplicant.conf support
+if [[ -f /mnt/release/wpa_supplicant.conf ]]; then
+  cp /mnt/release/wpa_supplicant.conf /tmp/release/files/linux
+fi
+## Custom samba.sh support
+if [[ -f /mnt/release/samba.sh ]]; then
+  cp /mnt/release/samba.sh /tmp/release/files/linux
+fi
 umount /mnt/release
 
 # Re-partition the SD card:

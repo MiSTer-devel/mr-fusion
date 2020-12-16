@@ -1,5 +1,20 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+# Copyright 2020 Michael Smith <root@retrospace.be>
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as published
+# by the Free Software Foundation.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+# MA 02110-1301, USA.
 
 VM_MEMORY=8192
 VM_CORES=8
@@ -126,7 +141,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "config/kernel-defconfig",
                               destination: "/home/vagrant/linux-socfpga/arch/arm/configs/mrfusion_defconfig"
 
-  # Copy resize init script
+  # Copy MiSTer installation init script
   config.vm.provision "file", source: "scripts/S99install-mister.sh",
                               destination: "/home/vagrant/buildroot/board/mrfusion/rootfs-overlay/etc/init.d/"
 end

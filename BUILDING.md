@@ -47,7 +47,7 @@ gigabytes of source code.
 
 ## Building the components
 
-Once the machine is up and running and has been succesfully provisioned, ssh
+Once the machine is up and running and has been successfully provisioned, ssh
 into it:
 
 ```
@@ -73,6 +73,6 @@ executing the following command:
 /vagrant/scripts/create-sd-card-image.sh
 ```
 
-If succesful, the resulting image can be found in the `images` folder
+If successful, the resulting image can be found in the `images` folder
 on the host machine (`/vagrant/images` on the guest machine). It is ready to be
 flashed to an SD card.
