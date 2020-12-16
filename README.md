@@ -1,6 +1,9 @@
 # Mr. Fusion - Universal MiSTer installation image
 
-Mr. Fusion provides a compact image that you can download
+Mr. Fusion is a tiny, custom Linux distribution designed to run on the
+DE10-Nano and install MiSTer.
+
+It comes in the form of a compact image that you can download
 and flash onto an SD card of any size with a tool like [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/applepi-baker-v2/), [balenaEtcher](https://www.balena.io/etcher/), [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) or even [dd](https://en.wikipedia.org/wiki/Dd_%28Unix%29).
 
 When you put this SD card into your DE10-nano and start it up, it will
@@ -11,6 +14,9 @@ From there, using the built-in scripts, you can configure WiFi
 (or use ethernet out of the box) and run the standard
 [MiSTer Updater script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
 to get an up to date MiSTer installation.
+
+You can provide custom WiFi and Samba configuration which Mr. Fusion will
+install alongside the basic MiSTer setup.
 
 ## Requirements
 
@@ -81,6 +87,22 @@ before you move it over to the DE10-nano, re-insert it into your computer.
 A new drive called `MRFUSION` will appear. In it is a `Scripts` folder. Put
 any script you want to have available in your MiSTer in this folder. It will
 be copied to your MiSTer's Scripts folder automatically during the installation.
+
+### Custom WiFi configuration
+
+You can copy a custom `wpa_supplicant.conf` file in the root of the SD card
+after flashing the Mr. Fusion image. It will automatically be copied to the
+correct place during the installation of MiSTer.
+This allows you to configure your WiFi credentials before you install MiSTer
+and thus removes the need to connect a keyboard after installation.
+
+### Custom Samba configuration
+
+You can copy a custom `samba.sh` file in the root of the SD card
+after flashing the Mr. Fusion image. It will automatically be copied to the
+correct place during the installation of MiSTer.
+This allows you to enable Samba before you install and thus removes
+the need to connect a keyboard to your MiSTer or having to ssh into it.
 
 ## How is this an improvement to the MiSTer setup process?
 
