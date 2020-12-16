@@ -25,7 +25,7 @@ fi
 mkdir -p /mnt/release /tmp/release
 mount -r /dev/mmcblk0p1 /mnt/release
 ## Show splash screen
-fbv /mnt/release/splash.png &
+fbv -fr /mnt/release/splash.png &
 cd /tmp/release
 unrar x /mnt/release/release.rar
 cp /mnt/release/Scripts/* /tmp/release/files/Scripts
