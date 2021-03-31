@@ -1,0 +1,6 @@
+0001-blkdiscard-use-O_EXCL-add-force.patch
+0002-libfdisk-add-fdisk_set_disklabel_id_from_string.patch
+0003-sfdisk-add-disk-id-to-change-disk-UUID-ID.patch
+0004-kill-include-sys-types.h-before-checking-SYS_pidfd_s.patch
+0005-include-cleanup-pidfd-inckudes.patch
+0006-libfdisk-script-accept-sector-size-ignore-unknown-headers.patch

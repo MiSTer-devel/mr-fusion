@@ -1,0 +1,4 @@
+0001-Remove-apparently-incorrect-usage-of-static.patch
+0002-Extract-a-function-for-splitting-a-colon-separated-s.patch
+0003-Add-option-to-make-the-rpath-relative-under-a-specif.patch
+0004-patchelf-Check-ELF-endianness-before-writing-new-run.patch

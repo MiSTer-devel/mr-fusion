@@ -1,0 +1,6 @@
+0002-cross.patch
+0003-fix-24bpp-support-on-big-endian.patch
+0004-fix-bgr555.patch
+0005-giflib.patch
+0006-include.patch
+0007-libpng15.patch

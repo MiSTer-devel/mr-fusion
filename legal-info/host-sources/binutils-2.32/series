@@ -1,0 +1,9 @@
+0001-sh-conf.patch
+0002-poison-system-directories.patch
+0003-bfd-xtensa-fix-shrink_dynamic_reloc_sections-for-exp.patch
+0004-gas-use-literals-const16-for-xtensa-loop-relaxation.patch
+0005-xtensa-gas-put-.literal_position-at-section-start.patch
+0006-or1k-Fix-incorrect-value-in-PLT-GOT-entries-causing-.patch
+0007-bfd-xtensa-fix-PR-ld-25630.patch
+0008-xtensa-fix-PR-ld-25861.patch
+0009-xtensa-fix-XTENSA_NDIFF-handling-for-PR-ld-25861.patch

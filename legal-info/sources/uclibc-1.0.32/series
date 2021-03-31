@@ -1,0 +1,2 @@
+0001-include-ctype.h-drop-is-_l-macro-definitions.patch
+0002-include-ctype.h-restore-__isctype_l-definition.patch
