@@ -1,3 +1,14 @@
+# Version 2.3
+
+- Updated packaged MiSTer release to release_20210917. This MiSTer release
+  includes out of the box gamepad support which should make setting up your new
+  MiSTer much easier!
+- Added support for custom config. During the MiSTer installation Mr. Fusion will copy the
+  config folder in the root of the SD card to your MiSTer. Put any custom MiSTer configuration
+  files in here. For example: Custom input mappings in config/inputs.
+- Removed support for RAR and added support for 7-zip as newer MiSTer releases
+  now use 7-zip compression instead of RAR.
+
 # Version 2.2
 
 - Added support for custom WiFi and Samba configuration (thanks versechoruscurse
