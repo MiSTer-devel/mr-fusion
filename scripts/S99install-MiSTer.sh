@@ -27,7 +27,7 @@ mount -r /dev/mmcblk0p1 /mnt/release
 ## Show splash screen
 fbv -fr /mnt/release/splash.png &
 cd /tmp/release
-unrar x /mnt/release/release.rar
+7zr x /mnt/release/release.7z
 cp /mnt/release/Scripts/* /tmp/release/files/Scripts
 ## Custom wpa_supplicant.conf support
 if [[ -f /mnt/release/wpa_supplicant.conf ]]; then
