@@ -43,8 +43,8 @@ sudo cp -r /vagrant/vendor/support/* /mnt/data/
 sudo cp /home/vagrant/linux-socfpga/arch/arm/boot/zImage /mnt/data
 
 # Download and copy MiSTer release.
-wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20210316.rar -O release.rar
-sudo cp release.rar /mnt/data
+wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20210917.7z -O release.7z
+sudo cp release.7z /mnt/data
 
 # Support MiSTer Scripts.
 sudo mkdir -p /mnt/data/Scripts
