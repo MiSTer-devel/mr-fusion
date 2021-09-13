@@ -120,7 +120,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     if [ ! -d /home/vagrant/linux-socfpga ]
       then
-        git clone https://github.com/altera-opensource/linux-socfpga.git
+        git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/michaelshmitty/linux-socfpga.git
     fi
 
     if [ ! -d /home/vagrant/buildroot ]
