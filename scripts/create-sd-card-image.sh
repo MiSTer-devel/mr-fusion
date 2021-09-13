@@ -51,6 +51,9 @@ sudo mkdir -p /mnt/data/Scripts
 wget -c https://raw.githubusercontent.com/MiSTer-devel/Scripts_MiSTer/master/other_authors/wifi.sh
 sudo cp wifi.sh /mnt/data/Scripts
 
+# Support custom MiSTer config
+sudo mkdir -p /mnt/data/config
+
 # Clean up.
 sudo umount /mnt/data
 sudo losetup -d /dev/loop0

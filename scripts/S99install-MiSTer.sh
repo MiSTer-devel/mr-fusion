@@ -24,19 +24,28 @@ fi
 # Backup the MiSTer release files to memory.
 mkdir -p /mnt/release /tmp/release
 mount -r /dev/mmcblk0p1 /mnt/release
+
 ## Show splash screen
 fbv -fr /mnt/release/splash.png &
 cd /tmp/release
 7zr x /mnt/release/release.7z
+
+## (Custom) scripts support
 cp /mnt/release/Scripts/* /tmp/release/files/Scripts
+
 ## Custom wpa_supplicant.conf support
 if [[ -f /mnt/release/wpa_supplicant.conf ]]; then
   cp /mnt/release/wpa_supplicant.conf /tmp/release/files/linux
 fi
+
 ## Custom samba.sh support
 if [[ -f /mnt/release/samba.sh ]]; then
   cp /mnt/release/samba.sh /tmp/release/files/linux
 fi
+
+## Custom config support
+cp -r /mnt/release/config /tmp/release/files/
+
 umount /mnt/release
 
 # Re-partition the SD card:
