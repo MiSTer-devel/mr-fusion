@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2020 Michael Smith <root@retrospace.be>
+# Copyright 2021 Michael Smith <m@hacktheplanet.be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as published
@@ -43,13 +43,16 @@ sudo cp -r /vagrant/vendor/support/* /mnt/data/
 sudo cp /home/vagrant/linux-socfpga/arch/arm/boot/zImage /mnt/data
 
 # Download and copy MiSTer release.
-wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20210316.rar -O release.rar
-sudo cp release.rar /mnt/data
+wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20210917.7z -O release.7z
+sudo cp release.7z /mnt/data
 
 # Support MiSTer Scripts.
 sudo mkdir -p /mnt/data/Scripts
 wget -c https://raw.githubusercontent.com/MiSTer-devel/Scripts_MiSTer/master/other_authors/wifi.sh
 sudo cp wifi.sh /mnt/data/Scripts
+
+# Support custom MiSTer config
+sudo mkdir -p /mnt/data/config
 
 # Clean up.
 sudo umount /mnt/data

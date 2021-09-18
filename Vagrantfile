@@ -1,6 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-# Copyright 2020 Michael Smith <root@retrospace.be>
+# Copyright 2021 Michael Smith <m@hacktheplanet.be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as published
@@ -120,7 +120,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     if [ ! -d /home/vagrant/linux-socfpga ]
       then
-        git clone https://github.com/altera-opensource/linux-socfpga.git
+        git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/michaelshmitty/linux-socfpga.git
     fi
 
     if [ ! -d /home/vagrant/buildroot ]
