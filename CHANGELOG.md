@@ -1,3 +1,7 @@
+# Version 2.4
+
+- Updated packaged MiSTer release to release_20211112.
+
 # Version 2.3
 
 - Updated packaged MiSTer release to release_20210917. This MiSTer release
