@@ -131,8 +131,7 @@ but we all have the same DE10-nano board, it makes sense to do it this way.
 
 ## Getting help
 
-If you need help, come find us in the #mister-help channel on the [Classic
-Gaming Discord server](https://top.gg/servers/418895913210216448).
+If you need help, come find us in the #help channel on the [MiSTer FPGA Discord server](https://discord.gg/misterfpga).
 
 ## Reporting issues
 
@@ -147,7 +146,8 @@ for more details.
 ## Acknowledgements
 
 Thanks to Sorgelig, Rysha, Ziggurat, alanswx, r0ni and Locutus73 for their insights.
-Thanks to [amoore2600](https://www.youtube.com/channel/UC_IynEJIMqkYaCVjEk_EIlg) for pushing me to build this.
+Thanks to amoore2600 for pushing me to build this.
+Thanks to everyone else who contributes to the MiSTer FPGA project.
 
 ## Disclaimer
 
