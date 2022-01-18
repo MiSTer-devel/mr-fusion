@@ -1,6 +1,8 @@
 # Version 2.4
 
 - Updated packaged MiSTer release to release_20211112.
+- Bundle [the new downloader script](https://github.com/MiSTer-devel/Downloader_MiSTer) until
+  it is included by default in a future MiSTer release.
 
 # Version 2.3
 
