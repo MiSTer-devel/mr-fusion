@@ -43,13 +43,22 @@ sudo cp -r /vagrant/vendor/support/* /mnt/data/
 sudo cp /home/vagrant/linux-socfpga/arch/arm/boot/zImage /mnt/data
 
 # Download and copy MiSTer release.
-wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20210917.7z -O release.7z
+wget -c https://github.com/MiSTer-devel/SD-Installer-Win64_MiSTer/raw/master/release_20211112.7z -O release.7z
 sudo cp release.7z /mnt/data
 
 # Support MiSTer Scripts.
 sudo mkdir -p /mnt/data/Scripts
+
+# Bundle WiFi setup script with Mr. Fusion
 wget -c https://raw.githubusercontent.com/MiSTer-devel/Scripts_MiSTer/master/other_authors/wifi.sh
 sudo cp wifi.sh /mnt/data/Scripts
+
+# Bundle new downloader script with Mr. Fusion
+# TODO(m): Remove this when the upstream MiSTer release includes the new downloader script
+# by default.
+# See https://github.com/MiSTer-devel/Main_MiSTer/issues/483
+wget -c https://raw.githubusercontent.com/MiSTer-devel/Downloader_MiSTer/main/downloader.sh
+sudo cp downloader.sh /mnt/data/Scripts
 
 # Support custom MiSTer config
 sudo mkdir -p /mnt/data/config
