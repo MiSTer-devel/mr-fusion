@@ -1,3 +1,9 @@
+# Version 2.5
+
+- Updated packaged MiSTer release to release_20220413.
+- [The new downloader script](https://github.com/MiSTer-devel/Downloader_MiSTer) has now replaced
+  the previous update.sh script by default in every new MiSTer release.
+
 # Version 2.4
 
 - Updated packaged MiSTer release to release_20211112.
