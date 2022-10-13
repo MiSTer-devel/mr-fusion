@@ -23,7 +23,7 @@ projects.
 
 Vagrant makes it easy to provision a virtual machine using a manifest called
 the [Vagrantfile](https://www.vagrantup.com/docs/vagrantfile). The Vagrantfile
-for this project is located in the [build-vm folder](https://github.com/MiSTer-devel/mr-fusion/tree/master/build-vm).
+for this project is located in the [root of the repository](https://github.com/MiSTer-devel/mr-fusion/blob/master/Vagrantfile).
 
 Change the memory, number of processor cores, disk size and software versions
 variables in the Vagrantfile if necessary. Do this before provisioning the
@@ -38,7 +38,7 @@ Clone this repository on your machine and provision the virtual machine:
 
 ```
 git clone https://github.com/MiSTer-devel/mr-fusion.git
-cd mr-fusion/build-vm
+cd mr-fusion
 vagrant up
 ```
 
