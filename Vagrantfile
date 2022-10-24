@@ -16,8 +16,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
-VM_MEMORY=8192
-VM_CORES=8
+VM_MEMORY=4096
+VM_CORES=2
 VM_DISK_SIZE=50
 BUILDROOT_VERSION="2020.02.3"
 
@@ -142,6 +142,6 @@ Vagrant.configure("2") do |config|
                               destination: "/home/vagrant/linux-socfpga/arch/arm/configs/mrfusion_defconfig"
 
   # Copy MiSTer installation init script
-  config.vm.provision "file", source: "scripts/S99install-mister.sh",
+  config.vm.provision "file", source: "scripts/S99install-MiSTer.sh",
                               destination: "/home/vagrant/buildroot/board/mrfusion/rootfs-overlay/etc/init.d/"
 end
