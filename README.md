@@ -11,8 +11,8 @@ expand the card to its full capacity and install a basic MiSTer setup.
 This will be familiar to anyone who's worked with a Raspberry Pi before.
 
 From there, using the built-in scripts, you can configure WiFi
-(or use ethernet out of the box) and run the standard
-[MiSTer Updater script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
+(or use Ethernet out of the box) and run the standard
+[MiSTer Downloader script](https://github.com/MiSTer-devel/Downloader_MiSTer)
 to get an up to date MiSTer installation.
 
 You can provide custom WiFi and Samba configuration which Mr. Fusion will
@@ -63,11 +63,12 @@ Mr. Fusion will automatically re-partition and resize your SD card and copy all 
 necessary MiSTer files onto it. When it's done it will reboot your DE10-nano
 and you will be greeted by the MiSTer menu.
 
-Connect a keyboard to your DE10-nano and hit F12 to open the menu. Through
-the Scripts section you can configure WiFi and update your MiSTer.
-Please refer to the instructions on the
-[MiSTer wiki](https://github.com/MiSTer-devel/Main_MiSTer/wiki) for more
-information.
+If you have an I/O board, you can pair a Bluetooth controller by holding the OSD
+button and you can map controller buttons by holding the "User" button.
+Otherwise you can connect a USB keyboard and hit F12 to open the MiSTer menu.
+
+Through the Scripts section you can configure WiFi and update your MiSTer.
+Please refer to the [MiSTer documentation](https://mister-devel.github.io/MkDocs_MiSTer/setup/software/) for more information.
 
 _Note: From powering on the DE10-nano and getting to the MiSTer menu should not
 take more than 90 seconds. If you don't see the MiSTer menu appear after
@@ -75,7 +76,7 @@ two minutes, power off the DE10-nano, remove the SD card and start over._
 
 ## MiSTer scripts support
 
-The [MiSTer updater script](https://github.com/MiSTer-devel/Updater_script_MiSTer)
+The [MiSTer Downloader script](https://github.com/MiSTer-devel/Downloader_MiSTer)
 is included by default in every MiSTer installation.
 This image also includes the [WiFi setup script](https://github.com/MiSTer-devel/Scripts_MiSTer/blob/master/other_authors/wifi.sh) to allow you to
 quickly setup a wireless internet connection after installation.

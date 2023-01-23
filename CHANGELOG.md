@@ -1,3 +1,8 @@
+# Version 2.6
+
+- Updated packaged MiSTer release to release_20221224.
+- Removed Vagrant method for building.
+
 # Version 2.5
 
 - Updated packaged MiSTer release to release_20220413.

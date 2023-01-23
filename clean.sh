@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2021 Michael Smith <m@hacktheplanet.be>
+# Copyright 2022 Michael Smith <m@hacktheplanet.be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as published
@@ -16,12 +16,14 @@
 # MA 02110-1301, USA.
 
 # buildroot
-cd ~/buildroot
-make mrfusion_defconfig
-make >&/dev/null
+pushd build/buildroot
+make clean
+popd
 
-# Linux
-cd ~/linux-socfpga
-make ARCH=arm CROSS_COMPILE=~/buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- mrfusion_defconfig
-make ARCH=arm CROSS_COMPILE=~/buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- -j10 >&/dev/null
-make ARCH=arm CROSS_COMPILE=~/buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- socfpga_cyclone5_socdk.dtb
+# kernel
+pushd build/linux-socfpga
+make clean
+popd
+
+# images
+rm -f images/*

@@ -5,64 +5,42 @@ compatible with the DE10-nano development board:
 
 - A bootloader and an FPGA bitstream that provides HDMI output, provided by
   the documentation on the DE10-nano CD (DE10_NANO_SoC_FB).
-- A custom Linux kernel: built from [source provided by Intel](https://github.com/altera-opensource/linux-socfpga).
+- A custom Linux kernel built from [source provided by Intel](https://github.com/altera-opensource/linux-socfpga).
 - A custom rootfs built by [Buildroot](https://buildroot.org/).
 
-In addition the build process generates a cross compilation toolchain using
+If necessary the build process will generate a cross compilation toolchain using
 Buildroot to compile all of the above.
 
 # Build process
 
-## Vagrant
+## Setup your build machine
 
-Mr. Fusion uses [Vagrant](https://www.vagrantup.com/) and
-[Virtualbox](https://www.virtualbox.org/) to manage a virtual machine that
-compiles the bootloader, kernel and rootfs used in the image.
-Install both applications on your system, following the documentation of those
-projects.
+You need a Linux system to build the Mr. Fusion SD card image. The official releases
+are built on a Debian 11 arm64 virtual machine running on Apple Silicon through qemu.
+But any Linux distro in a VM or on bare metal that can compile Buildroot and the Linux
+kernel should work.
 
-Vagrant makes it easy to provision a virtual machine using a manifest called
-the [Vagrantfile](https://www.vagrantup.com/docs/vagrantfile). The Vagrantfile
-for this project is located in the [root of the repository](https://github.com/MiSTer-devel/mr-fusion/blob/master/Vagrantfile).
+_NOTE: You can configure the number of threads used for compilation of the Linux
+kernel through the COMPILE_THREADS variable in the build.sh script._
 
-Change the memory, number of processor cores, disk size and software versions
-variables in the Vagrantfile if necessary. Do this before provisioning the
-VM as changes to the build scripts are not synced automatically, only when you
-re-provision the machine (which you can do at no additional cost, but it's a
-manual task).
-
-_NOTE: Don't forget to update the number of parallel compile jobs in the
-build.sh script if you change the amount of processor cores._
-
-Clone this repository on your machine and provision the virtual machine:
+Clone this repository on your machine and run the setup script:
 
 ```
 git clone https://github.com/MiSTer-devel/mr-fusion.git
 cd mr-fusion
-vagrant up
+./setup.sh
 ```
 
-Provisioning the virtual machine will take some time and download a few
-gigabytes of source code.
+It will take some time and download a few gigabytes of source code.
 
 ## Building the components
 
-Once the machine is up and running and has been successfully provisioned, ssh
-into it:
+The `build.sh` script will build a rootfs and the Linux kernel, with the former
+embedded as an initramfs into the latter:
 
 ```
-vagrant ssh
+./build.sh
 ```
-
-Inside the build-vm you can now build the necessary components with the all
-in one `build.sh` shell script:
-
-```
-/vagrant/scripts/build.sh
-```
-
-This will build the cross compilation toolchain, the rootfs, the bootloader
-and Linux kernel.
 
 ## Generating the SD card image
 
@@ -70,9 +48,16 @@ Once that has successfully completed you can generate the SD card image by
 executing the following command:
 
 ```
-/vagrant/scripts/create-sd-card-image.sh
+./create-sd-card-image.sh
 ```
 
-If successful, the resulting image can be found in the `images` folder
-on the host machine (`/vagrant/images` on the guest machine). It is ready to be
+If successful, the resulting image can be found in the `images` folder. It is ready to be
 flashed to an SD card.
+
+## Cleaning up
+
+If you want you can clean the build environment with the `clean.sh` script:
+
+```
+./clean.sh
+```

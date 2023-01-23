@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2021 Michael Smith <m@hacktheplanet.be>
+# Copyright 2022 Michael Smith <m@hacktheplanet.be>
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License version 3 as published
