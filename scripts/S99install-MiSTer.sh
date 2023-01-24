@@ -46,6 +46,10 @@ fi
 ## Custom config support
 cp -r /mnt/release/config /tmp/release/files/
 
+## SDL Game Controller DB support
+mkdir -p /tmp/release/files/linux/gamecontrollerdb
+cp -r /mnt/release/gamecontrollerdb.txt /tmp/release/files/linux/gamecontrollerdb/
+
 umount /mnt/release
 
 # Re-partition the SD card:

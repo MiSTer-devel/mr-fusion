@@ -59,6 +59,12 @@ wget -c https://raw.githubusercontent.com/MiSTer-devel/Scripts_MiSTer/master/oth
 sudo cp wifi.sh /mnt/data/Scripts
 rm -f wifi.sh
 
+# Bundle SDL Game Controller DB with Mr. Fusion
+rm -f gamecontrollerdb.txt
+wget -c https://raw.githubusercontent.com/MiSTer-devel/Distribution_MiSTer/main/linux/gamecontrollerdb/gamecontrollerdb.txt
+sudo cp gamecontrollerdb.txt /mnt/data
+rm -f gamecontrollerdb.txt
+
 # Support custom MiSTer config
 sudo mkdir -p /mnt/data/config
 
