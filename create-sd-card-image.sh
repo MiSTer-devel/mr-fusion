@@ -15,7 +15,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
-MISTER_RELEASE="release_20221224.7z"
+MISTER_RELEASE="release_20230501.7z"
 
 # Create the sd card image container.
 sudo dd if=/dev/zero of=images/mr-fusion.img bs=12M count=10

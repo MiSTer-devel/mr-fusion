@@ -1,3 +1,7 @@
+# Version 2.8
+
+- Updated packaged MiSTer release to release_20230501.
+
 # Version 2.7
 
 - Bundled the [SDL Game Controller DB](https://github.com/MiSTer-devel/Distribution_MiSTer/blob/main/linux/gamecontrollerdb/gamecontrollerdb.txt) until it is included by default in a future MiSTer release.
