@@ -47,7 +47,7 @@ fi
 cp -r /mnt/release/config /tmp/release/files/
 
 ## Generate a locally administered unicast MAC address for ethernet NIC
-MAC=$(hexdump -n 6 -ve '1/1 "%.2x "' /dev/random | \
+MAC=$(hexdump -n 6 -ve '1/1 "%.2x "' /dev/urandom | \
   awk -v a="2,6,a,e" -v r="$RANDOM" \
   'BEGIN { srand(r); }
   NR==1 { split(a,b,",");
