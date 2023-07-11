@@ -1,3 +1,10 @@
+# Version 2.9
+
+- Mr. Fusion now generates a random Ethernet MAC address for your MiSTer during installation.
+  This generated MAC address is set in `/linux/u-boot.txt`. This should better avoid potential
+  MAC address collisions when multiple MiSTers are connected to the same network.
+  Thanks [Callan Barrett](https://github.com/wizzomafizzo) for the contribution!
+
 # Version 2.8
 
 - Updated packaged MiSTer release to release_20230501.
