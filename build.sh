@@ -26,6 +26,6 @@ popd
 # Linux
 pushd build/linux-socfpga
 make ARCH=arm CROSS_COMPILE=../buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- mrfusion_defconfig
-make ARCH=arm CROSS_COMPILE=../buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- -j${COMPILE_THREADSe}
+make ARCH=arm CROSS_COMPILE=../buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- -j${COMPILE_THREADS}
 make ARCH=arm CROSS_COMPILE=../buildroot/output/host/bin/arm-buildroot-linux-uclibcgnueabi- socfpga_cyclone5_socdk.dtb
 popd
