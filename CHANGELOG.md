@@ -1,3 +1,7 @@
+# 08-05-2024 update
+
+- Migrate SD card image builder from virtual machine based system to Docker container.
+
 # Version 2.9
 
 - Mr. Fusion now generates a random Ethernet MAC address for your MiSTer during installation.
