@@ -65,6 +65,10 @@ curl -LsS -o /mnt/data/Scripts/wifi.sh \
 curl -LsS -o /mnt/data/gamecontrollerdb.txt \
   https://raw.githubusercontent.com/MiSTer-devel/Distribution_MiSTer/main/linux/gamecontrollerdb/gamecontrollerdb.txt
 
+# Bundle update_all script with Mr. Fusion
+curl -LsS -o /mnt/data/Scripts/update_all.sh \
+  https://raw.githubusercontent.com/theypsilon/Update_All_MiSTer/master/update_all.sh
+
 # Support custom MiSTer config
 mkdir -p /mnt/data/config
 
